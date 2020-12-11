@@ -13,6 +13,29 @@ export default function Home() {
 
       <Header />
 
+      <section className={styles.highlights}>
+        <div className={styles.textBox}>
+          <h1> Surfando: Favoritando a Internet </h1>
+
+          <p>
+            A Internet é um sistema global de redes de computadores 
+            interligadas  com o propósito de servir progressivamente 
+            usuários no mundo inteiro.
+          </p>
+
+          <div className={styles.underLine} />
+
+          <div className={styles.extra}>
+            <div className={styles.readingTime} >
+              <img src="/clock.svg" alt="clock"/>
+              <p>5 min de leitura</p>
+            </div>
+
+            <p>Leia mais {'>'} </p>
+          </div>
+        </div>
+      </section>
+
       <main className={styles.main}>
       </main>
 

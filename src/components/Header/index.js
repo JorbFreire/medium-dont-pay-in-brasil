@@ -1,6 +1,14 @@
+import { useState } from 'react';
 import styles from './styles.module.css';
 
 export default function Header() {
+  const [ search, setSearch ] = useState('');
+
+  function submitSearch(event) {
+    event.preventDefault();
+    alert('it shal give a search result page');
+  }
+
   return (
     <header className={styles.mainHeader} >
       <section className={styles.navBox}>
@@ -28,16 +36,18 @@ export default function Header() {
       <div />
       <div />
 
-      <section className={styles.search}>
+      <form onSubmit={submitSearch} className={styles.search}>
         <input
           id="search"
           type="text"
+          value={search}
+          onChange={event => setSearch(event.target.value)}
         />
-        
+
         <label htmlFor="search" >
           <img src="/search.svg" alt=""/>
         </label>
-      </section>
+      </form>
     </header>
   )
 }

@@ -1,0 +1,50 @@
+.highlights {
+  height: 710px;
+  background-color: rebeccapurple;
+}
+
+.textBox {
+  max-width: 620px;
+}
+
+.textBox h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.37;
+  color: #FFF;
+}
+
+.textBox p {
+  font-size: 2rem;
+  line-height: 1.35;
+  color: #FFF;
+}
+
+.underLine {
+  width: 100%;
+  height: 1px;
+  margin: 15px 0;
+  background-color: #FFF;
+}
+
+.extra {
+  display: flex;
+  justify-content: space-between;
+}
+
+.readingTime {
+  display: flex;
+}
+
+.readingTime svg {
+  height: 20px;
+  width: auto;
+}
+
+.extra p {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
