@@ -1,0 +1,50 @@
+.thumbBox {
+  display: flex;
+  flex-direction: column;
+  width: 520px;
+  height: fit-content;
+  margin-top: 40px;
+  margin-right: 41px;
+}
+
+.thumb {
+  background-color: green;
+  width: 100%;
+  height: 325px;
+  padding: 29px 32px;
+}
+
+.thumbBox h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 0.8;
+  color: #000000;
+}
+
+.thumbBox p {
+  font-size: 1.5rem;
+  line-height: 1.33;
+  color: #5e5e5e;
+}
+
+.underLine {
+  width: 100%;
+  height: 1px;
+  margin: 16px 0;
+  background-color: #707070;
+}
+
+.extra {
+  display: flex;
+  justify-content: space-between;
+}
+
+.extra span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.33;
+  margin: 0 10px;
+  color: #000000;
+}

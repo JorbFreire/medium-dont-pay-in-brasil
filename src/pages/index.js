@@ -1,6 +1,10 @@
 import Head from 'next/head';
 
 import Header from '../components/Header';
+import PostTag from '../components/PostTag';
+import PostThumb from '../components/PostThumb';
+import Advertisement from '../components/Advertisement';
+
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -15,9 +19,7 @@ export default function Home() {
 
       <section className={styles.highlights}>
         <div className={styles.textBox}>
-          <div className={styles.tag}>
-            <span> Ciência </span>
-          </div>
+          <PostTag>Ciência</PostTag>
 
           <h1> Surfando: Favoritando a Internet </h1>
           <p>
@@ -40,8 +42,33 @@ export default function Home() {
         <div /> <div /> <div /> <div />
       </section>
 
-      <main className={styles.main}>
+      <main className={styles.main}>        
+        <section className={styles.posts}>
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+          <PostThumb />
+        </section>
+
+        <Advertisement />
       </main>
+
+        <button className={styles.showMoreButton}>
+          <p> Mostrar Mais </p>
+          <span> \/ </span>
+        </button>
 
       <footer className={styles.footer}>
       </footer>
