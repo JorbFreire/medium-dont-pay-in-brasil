@@ -15,8 +15,11 @@ export default function Home() {
 
       <section className={styles.highlights}>
         <div className={styles.textBox}>
-          <h1> Surfando: Favoritando a Internet </h1>
+          <div className={styles.tag}>
+            <span> Ciência </span>
+          </div>
 
+          <h1> Surfando: Favoritando a Internet </h1>
           <p>
             A Internet é um sistema global de redes de computadores 
             interligadas  com o propósito de servir progressivamente 
@@ -34,6 +37,7 @@ export default function Home() {
             <p>Leia mais {'>'} </p>
           </div>
         </div>
+        <div /> <div /> <div /> <div />
       </section>
 
       <main className={styles.main}>

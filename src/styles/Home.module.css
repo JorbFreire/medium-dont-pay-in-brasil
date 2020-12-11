@@ -1,6 +1,22 @@
+/* highlights */
 .highlights {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   height: 710px;
   background-color: rebeccapurple;
+}
+
+.tag {
+  width: fit-content;
+  padding: 4px 13px;
+  font-size: 1.4rem;
+  
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 4px;
+  color: #FFF;
+  background-color: #535353;
 }
 
 .textBox {
@@ -47,4 +63,4 @@
   font-weight: 600;
   text-transform: uppercase;
 }
-
+/* *** */
