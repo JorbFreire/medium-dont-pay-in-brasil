@@ -10,21 +10,7 @@ import Advertisement from '../components/Advertisement';
 
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
-  const [ posts, setPosts ] = useState([]);
-
-  useEffect(() => {
-    async function getPosts() {
-      try {
-        const response = await api.get('/entries');
-        setPosts(response.data.items);
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getPosts();
-  }, []);
-
+export default function Home({ posts, orderedThumbs }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -61,9 +47,9 @@ export default function Home() {
 
       <main className={styles.main}>        
         <section className={styles.posts}>
-          {posts.map(post => (
+          {posts.map((post, index) => (
             <PostThumb
-              thumbId={post.fields.heroImage.sys.id}
+              thumb={orderedThumbs[index]}
               post={post.fields}
             />
           ))}
@@ -81,4 +67,36 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps(context) {
+  try {
+    const postsResponse = await api.get('/entries')
+    const posts = postsResponse.data.items;
+    
+    let orderedThumbs = []
+    for(let index = 0; index < posts.length; index++) {
+      const thumbResponse = await api.get(
+        `assets/${posts[index].fields.heroImage.sys.id}`
+      );
+      const thumb = thumbResponse.data.fields;
+      orderedThumbs.push(thumb);
+    }
+
+    return {
+      props: {
+        posts,
+        orderedThumbs
+      },
+      revalidate: 604800
+    }
+  } catch (error) {
+    console.log(error)
+    return {
+      props: {
+        posts: [],
+        orderedThumbs: []
+      }
+    }
+  }
 }

@@ -1,11 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL:
-    `https://cdn.contentful.com/spaces/
-    ${process.env.SPACE_ID}
-    /environments/
-    ${process.env.ENVIRONMENT}`,
+  baseURL: `https://cdn.contentful.com/spaces/${process.env.SPACE_ID}/environments/${process.env.ENVIRONMENT_ID}`,
 });
 
 api.interceptors.request.use(config => {

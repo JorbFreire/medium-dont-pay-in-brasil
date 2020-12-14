@@ -1,6 +1,3 @@
-import { useEffect, useState } from 'react';
-import api from '../../services/api';
-
 import PostTag from '../PostTag';
 import styles from './styles.module.css';
 
@@ -12,20 +9,8 @@ import styles from './styles.module.css';
 // readinTimeInMin:
 // slug:
 // title:
-export default function PostThumbs({ post, thumbId }) {
-  const [ thumb, setThumb ] = useState({});
-  
-  useEffect(() => {
-    async function getThumb() {
-      const response = await api.get(`assets/${thumbId}`);
-      setThumb(response.data.fields);
-    }
-    getThumb();
-  }, [thumbId]);
+export default function PostThumbs({ post, thumb }) {
 
-  useEffect(() => {
-    console.log(thumb);
-  }, [thumb]);
 
   return (
     <div className={styles.thumbBox}>
@@ -36,7 +21,9 @@ export default function PostThumbs({ post, thumbId }) {
         } : null }
         className={styles.thumb}
       >
-        {/* <PostTag> Ciência </PostTag> */}
+        {post.tags ? post.tags.map( tag =>
+          <PostTag> {tag} </PostTag>
+        ): null }
       </section>
 
       <h2> {post.title} </h2>
