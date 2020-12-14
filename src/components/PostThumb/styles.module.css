@@ -1,7 +1,8 @@
 .thumbBox {
   display: flex;
   flex-direction: column;
-  width: 520px;
+  max-width: 520px;
+  width: 100%;
   height: fit-content;
   margin-top: 40px;
   margin-right: 41px;

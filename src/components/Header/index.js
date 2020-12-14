@@ -14,7 +14,8 @@ export default function Header() {
       <section className={styles.navBox}>
         <img src="/logo.svg" alt="logo"/>
         
-        <nav>
+        {/* there is any page to nav now */}
+        {/* <nav>
           <a href="/">
             Dados
           </a>
@@ -30,7 +31,7 @@ export default function Header() {
           <a href="/">
             Artigos
           </a>
-        </nav>
+        </nav> */}
       </section>
 
       <div />

@@ -14,7 +14,7 @@ export default function Home({ posts, orderedThumbs }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title> Coffe tips </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
