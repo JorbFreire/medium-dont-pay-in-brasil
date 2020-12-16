@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PostTag from '../PostTag';
 import styles from './styles.module.css';
 
@@ -9,9 +10,7 @@ import styles from './styles.module.css';
 // readinTimeInMin:
 // slug:
 // title:
-export default function PostThumbs({ post, thumb }) {
-
-
+export default function PostThumbs({ thumb, post, _id }) {
   return (
     <div className={styles.thumbBox}>
       <section
@@ -35,8 +34,14 @@ export default function PostThumbs({ post, thumb }) {
           <img src="/clock.svg" alt="clock"/>
           <span> {post.readinTimeInMin} min de leitura</span>
         </div>
-
-        <span> Leia mais {'>'} </span>
+        
+        <Link href={`/post/${_id}`}>
+          <a>
+            <span>
+              Leia mais {'>'}
+            </span>
+          </a>
+        </Link>
       </footer>
     </div>
   )

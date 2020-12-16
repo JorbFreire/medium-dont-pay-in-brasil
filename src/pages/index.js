@@ -48,6 +48,8 @@ export default function Home({ posts, orderedThumbs }) {
         <section className={styles.posts}>
           {posts.map((post, index) => (
             <PostThumb
+              key={post.sys.id}
+              _id={post.sys.id}
               thumb={orderedThumbs[index]}
               post={post.fields}
             />
@@ -82,6 +84,7 @@ export async function getStaticProps(context) {
       orderedThumbs.push(thumb);
     }
 
+    console.log(postsResponse.data.items)
     return {
       props: {
         posts,
