@@ -9,7 +9,7 @@ import Advertisement from '../../components/Advertisement';
 import styles from '../../styles/Post.module.css';
 
 export default function Post({ post, thumb }) {
-  const publishDate = new Date(post.publishDate);
+  const publishDate = post? new Date(post.publishDate) : new Date(Date.now());
   const months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
 
   return(
