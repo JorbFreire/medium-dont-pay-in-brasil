@@ -82,8 +82,6 @@ export async function getStaticPaths() {
       slug: posts[index].sys.id
     }});
 
-  console.log(paths)
-
   return {
     paths,
     fallback: true,
