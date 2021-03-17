@@ -59,10 +59,10 @@ export default function Home({ posts, orderedThumbs }) {
         <Advertisement />
       </main>
 
-      <button className={styles.showMoreButton}>
+      {/* <button className={styles.showMoreButton}>
         <p> Mostrar Mais </p>
         <span> \/ </span>
-      </button>
+      </button> */}
 
       <footer className={styles.footer}>
       </footer>
@@ -89,7 +89,7 @@ export async function getStaticProps(context) {
         posts,
         orderedThumbs
       },
-      revalidate: 7200
+      revalidate: 1
     }
   } catch (error) {
     console.log(error)

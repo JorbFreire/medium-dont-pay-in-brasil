@@ -82,6 +82,8 @@ export async function getStaticPaths() {
       slug: posts[index].sys.id
     }});
 
+  console.log(paths)
+
   return {
     paths,
     fallback: true,
@@ -106,7 +108,7 @@ export async function getStaticProps(context) {
         post,
         thumb
       },
-      revalidate: 7200
+      revalidate: 1
     }
   } catch (error) {
     console.log(error)
