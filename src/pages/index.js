@@ -84,7 +84,6 @@ export async function getStaticProps(context) {
       orderedThumbs.push(thumb);
     }
 
-    console.log(postsResponse.data.items)
     return {
       props: {
         posts,
