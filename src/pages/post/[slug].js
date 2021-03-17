@@ -54,8 +54,8 @@ export default function Post({ post, thumb }) {
           </section>
 
           <img
-            src={thumb.file.url}
-            alt={thumb.description}
+            src={thumb&& thumb.file.url}
+            alt={thumb&& thumb.description}
             className={styles.thumb}
           />
           
@@ -108,7 +108,7 @@ export async function getStaticProps(context) {
         post,
         thumb
       },
-      revalidate: 1
+      revalidate: 7200
     }
   } catch (error) {
     console.log(error)

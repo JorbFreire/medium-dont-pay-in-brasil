@@ -89,7 +89,7 @@ export async function getStaticProps(context) {
         posts,
         orderedThumbs
       },
-      revalidate: 1
+      revalidate: 7200
     }
   } catch (error) {
     console.log(error)
