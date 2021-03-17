@@ -25,15 +25,15 @@ export default function Post({ post, thumb }) {
         <Advertisement />
 
         <div className={styles.post}>
-          <h1> {post.title} </h1>
+          <h1> {post&& post.title} </h1>
           <p className={styles.description}>
-            {post.description}
+            {post&& post.description}
           </p>
 
           <section className={styles.extraInfo}>
             <div className={styles.author}>
               <img src="/author.svg" alt="clock"/>
-              <span> {post.authorName} </span>
+              <span> {post&& post.authorName} </span>
             </div>
 
             <div className={styles.date}>
@@ -49,7 +49,7 @@ export default function Post({ post, thumb }) {
 
             <div className={styles.readingTime}>
               <img src="/clock.svg" alt="/clock"/>
-              <span> {post.readinTimeInMin} min de leitura</span>
+              <span> {post&& post.readinTimeInMin} min de leitura</span>
             </div>
           </section>
 
@@ -61,7 +61,7 @@ export default function Post({ post, thumb }) {
           
           <section className={styles.postSection}>
             <ReactMarkdown>
-              {post.body}
+              {post&& post.body}
             </ReactMarkdown>
           </section>
         </div>
