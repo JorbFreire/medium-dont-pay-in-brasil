@@ -11,8 +11,7 @@
 }
 
 .post {
-  width: fit-content;
-  max-width: 700px;
+  flex: 1;
   padding: 70px 35px;
 }
 
