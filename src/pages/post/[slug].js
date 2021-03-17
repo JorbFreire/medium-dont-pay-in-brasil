@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image'
 import ReactMarkdown from 'react-markdown';
 
 import api from '../../services/api';
@@ -54,7 +53,11 @@ export default function Post({ post, thumb }) {
             </div>
           </section>
 
-          <img src={thumb.file.url} alt={thumb.description} />
+          <img
+            src={thumb.file.url}
+            alt={thumb.description}
+            className={styles.thumb}
+          />
           
           <section className={styles.postSection}>
             <ReactMarkdown>
@@ -78,10 +81,10 @@ export async function getStaticPaths() {
     paths.push({ params: {
       slug: posts[index].sys.id
     }});
-  console.log
+
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 
@@ -103,7 +106,7 @@ export async function getStaticProps(context) {
         post,
         thumb
       },
-      revalidate: 604800
+      revalidate: 7200
     }
   } catch (error) {
     console.log(error)

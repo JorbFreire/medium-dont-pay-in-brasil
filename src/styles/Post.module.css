@@ -39,6 +39,10 @@
   margin-right: 30px;
 }
 
+.thumb {
+  max-width: 100%;
+}
+
 /* text */
 .post h1 {
   font-size: 4rem;
@@ -54,8 +58,22 @@
   margin-bottom: 15px;
 }
 
-.post p {
+.post p,
+.post code {
   font-size: 2rem;
+}
+
+.post p code {
+  background-color: #D5D5D5;
+  padding: 0 2px;
+  border-radius: 4px;
+}
+
+.post pre {
+  background-color: #D5D5D5;
+  padding: 6px 4px;
+  margin: 4px 0px;
+  border-radius: 4px;
 }
 
 .postSection p + p  {
